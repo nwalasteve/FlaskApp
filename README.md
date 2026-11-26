@@ -1,27 +1,22 @@
 # FlaskApp
 
-A beginner Flask web application with automated tests, built as part of DevOps training.
+A simple Python web application built with Flask and containerised using Docker.
 
-## 1. Project Overview
+## Project Overview
 
-FlaskApp is a simple Python web application developed using the Flask framework.
+FlaskApp is a lightweight web application that demonstrates how to develop, test, containerise, and run a Python Flask application using Docker.
 
-The application currently provides a homepage that displays:
+The application exposes a simple HTTP endpoint that returns a "Hello, World!" message.
 
-**Hello, World!**
+## Technologies Used
 
-It also includes an automated test to verify that the application responds correctly.
+- Python 3.11
+- Flask
+- Docker
+- Pytest
+- Git and GitHub
 
-## 2. Technologies Used
-
-- Python 3.13
-- Flask 3.0.3
-- Pytest 7.4.2
-- Git
-- GitHub
-- Visual Studio Code
-
-## 3. Project Structure
+## Project Structure
 
 ```text
 FlaskApp/
@@ -29,91 +24,96 @@ FlaskApp/
 ├── app.py
 ├── test_app.py
 ├── requirements.txt
-├── .gitignore
-└── README.md
+├── Dockerfile
+├── README.md
+└── .gitignore
 ```
 
-## 4. Installation and Setup
+## Getting Started
 
-### Prerequisites
-
-Ensure that Python 3.13 and Git are installed on your computer.
-
-### Step 1: Clone the repository
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/nwalasteve/FlaskApp.git
-```
-
-### Step 2: Navigate into the project directory
-
-```bash
+git clone https://github.com/YOUR_USERNAME/FlaskApp.git
 cd FlaskApp
 ```
 
-### Step 3: Install dependencies
+### 2. Install dependencies
 
 ```bash
-py -3.13 -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-## 5. Running the Application
-
-Start the Flask development server using:
+### 3. Run the application locally
 
 ```bash
-py -3.13 app.py
+python app.py
 ```
 
-Open your browser and navigate to:
+Open your browser and visit:
 
 ```text
-http://127.0.0.1:5000
+http://localhost:5000
 ```
 
-You should see:
+Expected response:
 
 ```text
 Hello, World!
 ```
 
-## 6. Running Automated Tests
+## Running with Docker
 
-The project uses Pytest for automated testing.
+### 1. Build the Docker image
+
+```bash
+docker build -t flaskapp:1.0 .
+```
+
+### 2. Run the Docker container
+
+```bash
+docker run -d --name flask-container -p 5000:5000 flaskapp:1.0
+```
+
+### 3. Access the application
+
+Visit:
+
+```text
+http://localhost:5000
+```
+
+### 4. Stop the container
+
+```bash
+docker stop flask-container
+```
+
+### 5. Remove the container
+
+```bash
+docker rm flask-container
+```
+
+## Running Tests
 
 Execute the following command:
 
 ```bash
-py -3.13 -m pytest
+pytest
 ```
 
-The test verifies that:
+## Learning Objectives
 
-- The homepage returns HTTP status code 200.
-- The response contains the expected "Hello, World!" message.
+- Develop a basic Flask web application.
+- Understand Docker images and containers.
+- Create and configure a Dockerfile.
+- Build and run containerised Python applications.
+- Use Git and GitHub for version control and project management.
 
-## 7. Version Control
+## Author
 
-Git is used for version control, while GitHub hosts the remote repository.
+**Stephen Nwala**
 
-Repository: https://github.com/nwalasteve/FlaskApp
-
-The project uses the `main` branch.
-
-## 8. Future Improvements
-
-Potential enhancements include:
-
-- Developing additional application routes.
-- Introducing HTML templates and CSS styling.
-- Integrating a database.
-- Expanding automated test coverage.
-- Implementing a CI/CD pipeline.
-
----
-
-**Author:** Nwala Stephen
-
-**Project:** FlaskApp
-
-**Purpose:** DevOps Training
+GitHub: [Your GitHub Profile](https://github.com/YOUR_USERNAME)
